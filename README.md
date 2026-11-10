@@ -4,19 +4,19 @@
 ## Test Cases
 | Test | Expected handler | Observed Result | Status | Evidence |
 |------|------------------|-----------------|-----|----------|
-| T1 | `onMessage` | Pending device test | Pending | Screenshot 1 |
-| T2 | `onMessageOpenedApp` | Pending device test | Pending | Screenshot 2 |
-| T3 | `getInitialMessage()` | Pending device test | Pending | Screenshot 3 |
-| T4 | Payload validation | Pending device test | Pending | Screenshot 4 |
+| T1 | `onMessage` | Pending device test | Pending | ![Screenshot 1](image_url_or_path) |
+| T2 | `onMessageOpenedApp` | Pending device test | Pending | ![Screenshot 2](image_url_or_path) |
+| T3 | `getInitialMessage()` | Pending device test | Pending | ![Screenshot 3](image_url_or_path) |
+| T4 | Payload validation | Pending device test | Pending | ![Screenshot 4](image_url_or_path) |
 
 ## Critical Thinking Questions
-1. Lifecycle Prediction
+1. Lifecycle Prediction<br>
     What happens when a notification arrives while the app is foregrounded, backgrounded, or terminated?
     - 
-2. Payload Validation
+2. Payload Validation<br>
     What should happen if the notification contains an unsupported image name?
     - 
-3. Evidence and Reliability
+3. Evidence and Reliability<br>
     Why is it important to test all three application states?
     - 
 
