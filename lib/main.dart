@@ -25,32 +25,43 @@ class FCMService {
   Future<void> initialize({
     required Function(String asset, String title) onMessageReceived,
   }) async {
-    await _messaging.requestPermission(
-      alert: true,
-      badge: true,
-      sound: true,
-    );
+    // Request notification permission safely.
+    try {
+      final settings = await _messaging.getNotificationSettings();
 
-    // Receives messages while the app is open and in the foreground
+      if (settings.authorizationStatus ==
+          AuthorizationStatus.notDetermined) {
+        await _messaging.requestPermission(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
+      }
+
+      debugPrint('Notification permission checked.');
+    } catch (e) {
+      // Prevent a permission error from stopping app initialization.
+      debugPrint('Notification permission request issue: $e');
+    }
+
+    // Handle notifications received while the app is open.
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       debugPrint('Foreground message received');
-
       _processMessage(message, onMessageReceived);
     });
 
-    // Handles notification taps when the app is in the background
+    // Handle taps on notifications while the app is backgrounded.
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       debugPrint('Background notification opened');
-
       _processMessage(message, onMessageReceived);
     });
 
+    // Handle taps on notifications that launch a terminated app.
     RemoteMessage? initialMessage =
         await _messaging.getInitialMessage();
 
     if (initialMessage != null) {
       debugPrint('App opened from terminated state');
-
       _processMessage(initialMessage, onMessageReceived);
     }
   }
