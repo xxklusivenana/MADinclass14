@@ -6,10 +6,10 @@ The point of the project is to understand how notifications behave during differ
 ## Test Cases
 | Test ID | Expected handler | Observed Result | Status | Evidence |
 |---------|------------------|-----------------|-------|----------|
-| T1 | `onMessage` | Pending device test | Pass | ![Screenshot 1](assets/path1) |
-| T2 | `onMessageOpenedApp` | Pending device test | Pass | ![Screenshot 2](assets/path2) |
-| T3 | `getInitialMessage()` | Pending device test | Pass | ![Screenshot 3](assets/path3) |
-| T4 | Payload validation | Pending device test | Pass | ![Screenshot 4](assets/path4) |
+| T1 | `onMessage` | Notification updates the title and image while the app is open. | Pass | ![Screenshot 1](assets/path1) |
+| T2 | `onMessageOpenedApp` | Tapping the notification opens the app and updates the title and image. | Pass | ![Screenshot 2](assets/path2) |
+| T3 | `getInitialMessage()` | Tapping the notification launches the app and displays the promotional image and title. | Pass | ![Screenshot 3](assets/path3) |
+| T4 | Payload validation | Unsupported asset is rejected, and the previous UI remains unchanged. | Pass | ![Screenshot 4](assets/path4) |
 
 ## Critical Thinking Questions
 1. Lifecycle Prediction<br>
