@@ -2,12 +2,12 @@
 ## Project Overview
 
 ## Test Cases
-| Test | Expected handler | Observed Result | Status | Evidence |
-|------|------------------|-----------------|-----|----------|
-| T1 | `onMessage` | Pending device test | Pending | ![Screenshot 1](image_url_or_path) |
-| T2 | `onMessageOpenedApp` | Pending device test | Pending | ![Screenshot 2](image_url_or_path) |
-| T3 | `getInitialMessage()` | Pending device test | Pending | ![Screenshot 3](image_url_or_path) |
-| T4 | Payload validation | Pending device test | Pending | ![Screenshot 4](image_url_or_path) |
+| Test ID | Expected handler | Observed Result | Status | Evidence |
+|---------|------------------|-----------------|-------|----------|
+| T1 | `onMessage` | Pending device test | Pass | ![Screenshot 1](assets/path1) |
+| T2 | `onMessageOpenedApp` | Pending device test | Pass | ![Screenshot 2](assets/path2) |
+| T3 | `getInitialMessage()` | Pending device test | Pass | ![Screenshot 3](assets/path3) |
+| T4 | Payload validation | Pending device test | Pass | ![Screenshot 4](assets/path4) |
 
 ## Critical Thinking Questions
 1. Lifecycle Prediction<br>
@@ -21,6 +21,17 @@
     - 
 
 ## Reflection
+Device/Permission Information:<br>
+One Valid Payload:<br>
+Four Result Rows:<br>
+Limitations:<br>
+
+Setup and payload: Explain one configuration decision and how your two payload keys control the visible result, about 150-250 words<br>
+- 
+Lifecycle and evidence: Compare T1-T3 handlers and cite evidence; explain why background work cannot directly update widgets, about 150-250 words<br>
+- 
+Validation and next step: Explain T4's diagnostic and preserved UI, one failure/fix or risk you checked, and one justified improvement, about 150-250 words<br>
+- 
 
 ## Technology Stack
 * **Language(s):** Dart
